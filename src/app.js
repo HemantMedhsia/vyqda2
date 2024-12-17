@@ -18,10 +18,11 @@ app.use(
   })
 );
 
-app.use(errorHandler);
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
+
+app.use(errorHandler);
 
 app.get("/", (req, res) => {
   res.send("Assignment Backend!");
