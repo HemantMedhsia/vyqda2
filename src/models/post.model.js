@@ -1,18 +1,28 @@
-import { DataTypes } from 'sequelize';
-import sequelize from '../db/connection.js';
+import { DataTypes } from "sequelize";
+import sequelize from "../db/connection.js";
 
-const Post = sequelize.define('Post', {
+const Post = sequelize.define(
+  "Post",
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      allowNull: false,
+      primaryKey: true,
+    },
     title: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     content: {
-        type: DataTypes.TEXT,
-        allowNull: false,
+      type: DataTypes.TEXT,
+      allowNull: false,
     },
-}, {
-    tableName: 'posts',
+  },
+  {
+    tableName: "posts",
     timestamps: true,
-});
+  }
+);
 
 export default Post;
