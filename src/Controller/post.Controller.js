@@ -1,7 +1,7 @@
-import Post from "../models/post.model.js";
 import { ApiResponse } from "../utils/responseHandler.js";
 import { ApiError } from "../utils/apiErrorHandler.js";
 import { asyncHandler } from "../utils/wrapAsync.js";
+import { Post } from "../models/index.js";
 
 export const createPost = asyncHandler(async (req, res, next) => {
   const { title, content } = req.body;
